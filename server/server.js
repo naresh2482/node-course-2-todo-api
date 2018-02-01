@@ -25,3 +25,5 @@ app.post('/todos', (req, res) => {
 app.listen(3000, () => {
   console.log('Server is lestening at post 3000..');
 });
+
+module.exports = {app};
