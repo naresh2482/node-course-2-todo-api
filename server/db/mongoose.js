@@ -1,7 +1,7 @@
 
 var mongoose = require('mongoose');
 
-const MONGODB_URI = 'mongodb://naresh2482:naresh24@ds247007.mlab.com:47007/naresh-test';
+const MONGODB_URI = undefined;//'mongodb://naresh2482:naresh24@ds247007.mlab.com:47007/naresh-test';
 
 mongoose.Promise = global.Promise;
 

@@ -54,8 +54,20 @@ app.get('/todos/:id', (req, res) =>{
       }
 
       res.status(200).send({todo});
-    }).catch( (e) => res.status(400).send(e) );
-})
+    }).catch( (e) => res.status(400).send(e));
+});
+
+app.delete('/todos/:id', (req, res) => {
+  var id = req.params.id;
+  Todo.findOneAndRemove({_id: id}).then((removedDoc) => {
+    if (!removedDoc) {
+        return res.status(404).send({});
+    }
+    res.send(removedDoc);
+  }, (e) => res.status(400).send(e));
+
+});
+
 
 app.listen(port, () => {
   console.log(`Server is lestening at port ${port}...`);
