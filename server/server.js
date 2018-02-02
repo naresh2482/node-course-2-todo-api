@@ -22,6 +22,17 @@ app.post('/todos', (req, res) => {
   });
 });
 
+app.get('/todos', (req, res) => {
+  Todo.find().then((todos) => {
+    //console.log('Todo List:', JSON.stringify(doc, undefined, 2));
+    res.send({
+        todos
+      });
+  }, (e)=>{
+    res.status(400).send(e);
+  })
+})
+
 app.listen(3000, () => {
   console.log('Server is lestening at post 3000..');
 });
