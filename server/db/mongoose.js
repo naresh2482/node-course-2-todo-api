@@ -1,7 +1,7 @@
 
 var mongoose = require('mongoose');
 
-const MONGODB_URI = undefined;//'mongodb://naresh2482:naresh24@ds247007.mlab.com:47007/naresh-test';
+const MONGODB_URI = undefined;  //'mongodb://naresh2482:naresh24@ds247007.mlab.com:47007/naresh-test';
 
 mongoose.Promise = global.Promise;
 
@@ -17,8 +17,8 @@ mongoose.Promise = global.Promise;
 //     ]
 // };
 
-mongoose.connect(MONGODB_URI || 'mongodb://localhost:27017/TodoApp');
+//mongoose.connect(MONGODB_URI || 'mongodb://localhost:27017/TodoApp');
 
-//mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/TodoApp');
+mongoose.connect(process.env.MONGODB_URI);
 
 module.exports = {mongoose};
